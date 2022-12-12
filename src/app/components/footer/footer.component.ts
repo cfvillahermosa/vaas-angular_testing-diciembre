@@ -19,8 +19,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class FooterComponent {
   @Input() title = '';
-  repoTitle = 'anguLab repository';
-  repoUrl = 'https://github.com/AlbertoBasalo/angulab';
+  repoTitle = 'Angular Testing repository';
+  repoUrl =
+    'https://github.com/TrainingITCourses/vaas-angular_testing-diciembre';
   author = 'Alberto Basalo';
   authorUrl = 'https://albertobasalo.dev';
 }

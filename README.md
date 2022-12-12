@@ -2,6 +2,8 @@
 
 > A sample project for Angular workshop demos
 
+- [♊ Clone Repository on gitHub](https://github.com/TrainingITCourses/vaas-angular_testing-diciembre)
+
 - 🚚 Install dependencies `npm i`
 
 - 🚀 Execute `npm run api` and `npm start` to run the app.
