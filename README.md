@@ -10,6 +10,14 @@
 
 - 📕 Read the `docs` folder content for more info.
 
+## Unit and Integration testing with only Jasmine alone
+
+- [Base Store](src\app\services\base.store.ts) (Unit)
+- [Api Store](src\app\services\api.store.ts) (Integration)
+- `npm install karma-spec-reporter --save-dev` (Add spec reporter)
+- [tests](src\test.ts) (Choose running context)
+- [Karma Config](karma.conf.js)(Configuration)
+
 ---
 
 <footer>
