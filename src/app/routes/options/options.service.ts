@@ -7,12 +7,16 @@ export class OptionsService {
   constructor(private api: ApiService) {}
 
   getOptionsForEndPoint$(endPoint: string) {
-    return this.api.getOptions$(endPoint);
+    // return of([]);
+    // this.api.getOptions$(endPoint);
+    return this.api.getOptions$(endPoint.toLowerCase());
   }
   saveOption$(endpoint: string, option: Partial<Option>) {
     return this.api.postOption$(endpoint, option);
   }
   deleteOption$(endpoint: string, option: Partial<Option>) {
-    return this.api.deleteOption$(endpoint, option.id || '');
+    if (!option.id) throw new Error('No id');
+    return this.api.deleteOption$(endpoint, option.id);
+    //return this.api.deleteOption$(endpoint, option.id || '');
   }
 }
