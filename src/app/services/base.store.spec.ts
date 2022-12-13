@@ -162,4 +162,25 @@ describe('The BaseStore class', () => {
       destination: inputs[1],
     });
   });
+
+  // ! session 2
+  // ! Spy on a private method
+  it('should call clone when getState is called', () => {
+    // Arrange
+    const sut = new BaseStore(initialState);
+    const cloneMethodSpy = spyOn(sut as any, 'clone');
+    // Act
+    sut.getState();
+    // Assert
+    expect(cloneMethodSpy).toHaveBeenCalled();
+  });
+  it('should not call clone when select$ is called', () => {
+    // Arrange
+    const sut = new BaseStore(initialState);
+    const cloneMethodSpy = spyOn(sut as any, 'clone');
+    // Act
+    sut.select$((s) => s);
+    // Assert
+    expect(cloneMethodSpy).toHaveBeenCalledTimes(0);
+  });
 });
