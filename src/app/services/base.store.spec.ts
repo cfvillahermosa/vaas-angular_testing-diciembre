@@ -160,3 +160,4 @@ describe('The BaseStore class', () => {
       destination: inputs[1],
     });
   });
+});
