@@ -145,6 +145,7 @@ describe('The BaseStore class', () => {
     const inputs = ['Mars', 'Venus'];
     const expected = ['The Moon', 'Mars', 'Venus'];
     let index = 0;
+
     // Act
     sut
       .select$((state) => state.destination)
@@ -153,6 +154,7 @@ describe('The BaseStore class', () => {
         expect(actual).toEqual(expected[index]);
         index++;
       });
+
     sut.setState({
       destination: inputs[0],
     });
