@@ -23,7 +23,7 @@ describe('The ApiStore ', () => {
     });
     // * be descriptive with test names
     it('should create an instance without arguments', () => {
-      expect(new ApiStore<Trip>()).toBeTruthy();
+      expect(tripsApiStore).toBeTruthy();
     });
     it('should have an initial state', () => {
       // *  Be descriptive with variable names
