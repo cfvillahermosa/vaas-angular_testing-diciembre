@@ -18,6 +18,19 @@
 - [tests](src\test.ts) (Choose running context)
 - [Karma Config](karma.conf.js)(Configuration)
 
+## Jasmine Spy and test doubles
+
+- [Options Service](src\app\routes\options\options.service.ts) (Spy calls to Collaborator)
+- [Base Store](src\app\services\base.store.ts) (Spy private methods)
+- [Api Store](src\app\services\api.store.ts) (Spy and stub dependencies)
+- [TimeSpan Pipe](src\app\pipes\time-span\time-span.pipe.ts) (Extract logic from Angular artifacts)
+
+## Test Bed: imports and providers
+
+- [Api Service](src\app\services\api.service.ts) (HttpClientTestingModule)
+- [Utils Service](src\app\services\utils.service.ts) (inject a mock)
+- [Home Service](src\app\routes\home\home.service.ts) (integrated -> imports vs isolated -> providers)
+
 ---
 
 <footer>
