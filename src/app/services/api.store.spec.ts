@@ -80,7 +80,7 @@ describe('Spying the BaseStore dependency use', () => {
   });
 });
 
-fdescribe('Stubbing the BaseStore dependency use', () => {
+describe('Stubbing the BaseStore dependency use', () => {
   it('should return an observable with initial state whe call select$', () => {
     const tripsApiStore = new ApiStore<Trip>();
     const baseStoreStub = jasmine.createSpyObj('BaseStore', ['select$']);
