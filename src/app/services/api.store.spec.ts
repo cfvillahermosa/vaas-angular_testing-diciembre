@@ -1,13 +1,14 @@
 import { API_INITIAL_STATE } from '@models/api.interface';
+import { of } from 'rxjs';
 import { ApiStore } from './api.store';
 
 // ! session 1
 // ! Is an INTEGRATION test
 // ! The BaseStore class is not mocked
 
+type Trip = { destination: string; startDate: Date; price: number };
 describe('The ApiStore ', () => {
   // * prefer well named types and variables with realistic values
-  type Trip = { destination: string; startDate: Date; price: number };
   let tripsApiStore: ApiStore<Trip>;
   let trips: Trip[];
   describe('Wrapping the BaseStore ', () => {
@@ -58,6 +59,37 @@ describe('The ApiStore ', () => {
         const expected = [...trips, newTrip];
         expect(tripsApiState.data).toEqual(expected);
       });
+    });
+  });
+});
+
+describe('Spying the BaseStore dependency use', () => {
+  let tripsApiStore: ApiStore<Trip>;
+  let baseStoreSpy: any;
+  beforeEach(() => {
+    tripsApiStore = new ApiStore();
+    baseStoreSpy = jasmine.createSpyObj('BaseStore', ['setState']);
+    tripsApiStore['baseStore'] = baseStoreSpy;
+  });
+  it('should call setState correctly when setIsWorking', () => {
+    tripsApiStore.setIsWorking();
+    expect(baseStoreSpy.setState).toHaveBeenCalledOnceWith({
+      isWorking: true,
+      error: '',
+    });
+  });
+});
+
+fdescribe('Stubbing the BaseStore dependency use', () => {
+  it('should return an observable with initial state whe call select$', () => {
+    const tripsApiStore = new ApiStore<Trip>();
+    const baseStoreStub = jasmine.createSpyObj('BaseStore', ['select$']);
+    baseStoreStub.select$ = jasmine
+      .createSpy()
+      .and.returnValue(of(API_INITIAL_STATE));
+    tripsApiStore['baseStore'] = baseStoreStub;
+    tripsApiStore.selectState$().subscribe((tripsApiState) => {
+      expect(tripsApiState).toEqual(API_INITIAL_STATE);
     });
   });
 });
