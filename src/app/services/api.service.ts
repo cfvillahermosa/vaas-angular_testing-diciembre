@@ -18,8 +18,6 @@ export class ApiService {
 
   constructor(private http: HttpClient, private utilsService: UtilsService) {}
 
-  // ToDo: create generic methods
-
   getAgencies$(): Observable<Agency[]> {
     return this.http.get<Agency[]>(this.agenciesUrl);
   }
