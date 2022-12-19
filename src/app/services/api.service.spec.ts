@@ -12,7 +12,7 @@ class UtilsServiceStub {
   }
 }
 
-fdescribe('ApiService', () => {
+describe('ApiService', () => {
   let service: ApiService;
   let httpTestingController: HttpTestingController;
 

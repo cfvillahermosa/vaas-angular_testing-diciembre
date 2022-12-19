@@ -6,6 +6,7 @@ import { ApiStore } from '@services/api.store';
 @Injectable()
 export class HomeService {
   private tripsStore = new ApiStore<Trip>();
+
   constructor(private api: ApiService) {}
 
   loadTrips() {
