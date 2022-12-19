@@ -10,7 +10,7 @@ import { HomeService } from './home.service';
 // ! session 3
 // ! integration test (not e2e)
 // ! the TestBed provides its dependencies
-fdescribe('The Home Service _integrated_', () => {
+describe('The Home Service _integrated_', () => {
   let homeService: HomeService;
 
   beforeEach(() => {

@@ -27,8 +27,8 @@ import { ApiService } from '@services/api.service';
         </thead>
         <tbody>
           <tr *ngFor="let agency of agencies">
-            <td>{{ agency.name }}</td>
-            <td>{{ agency.range }}</td>
+            <td name="agencyName">{{ agency.name }}</td>
+            <td name="agencyRange">{{ agency.range }}</td>
             <td>{{ agency.status }}</td>
             <td><button (click)="onDeleteClick(agency.id)">🗑️</button></td>
           </tr>
@@ -82,8 +82,8 @@ export class AgenciesComponent implements OnInit {
   };
 
   constructor(private api: ApiService) {
-    this.loadAgencies();
-    this.loadOptions();
+    // this.loadAgencies();
+    // this.loadOptions();
   }
 
   private loadOptions() {
@@ -95,7 +95,10 @@ export class AgenciesComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadAgencies();
+    this.loadOptions();
+  }
 
   loadAgencies() {
     this.api.getAgencies$().subscribe((agencies) => {
