@@ -2,7 +2,7 @@
 
 > A sample project for Angular workshop demos
 
-- [♊ Clone Repository on gitHub](https://github.com/TrainingITCourses/vaas-angular_testing-diciembre)
+- **♊ Clone Repository on gitHub** _https://github.com/TrainingITCourses/vaas-angular_testing-diciembre _
 
 - 🚚 Install dependencies `npm i`
 
@@ -12,24 +12,24 @@
 
 ## Unit and Integration testing with only Jasmine alone
 
-- [Base Store](src\app\services\base.store.ts) (Unit)
-- [Api Store](src\app\services\api.store.ts) (Integration)
-- `npm install karma-spec-reporter --save-dev` (Add spec reporter)
-- [tests](src\test.ts) (Choose running context)
-- [Karma Config](karma.conf.js)(Configuration)
+- **Base Store** _src\app\services\base.store.ts _ _Unit _
+- **Api Store** _src\app\services\api.store.ts _ _Integration _
+- `npm install karma-spec-reporter --save-dev` _Add spec reporter _
+- **tests** _src\test.ts _ _Choose running context _
+- **Karma Config** _karma.conf.js _ _Configuration _
 
 ## Jasmine Spy and test doubles
 
-- [Options Service](src\app\routes\options\options.service.ts) (Spy calls to Collaborator)
-- [Base Store](src\app\services\base.store.ts) (Spy private methods)
-- [Api Store](src\app\services\api.store.ts) (Spy and stub dependencies)
-- [TimeSpan Pipe](src\app\pipes\time-span\time-span.pipe.ts) (Extract logic from Angular artifacts)
+- **Options Service** _src\app\routes\options\options.service.ts _ _Spy calls to Collaborator _
+- **Base Store** _src\app\services\base.store.ts _ _Spy private methods _
+- **Api Store** _src\app\services\api.store.ts _ _Spy and stub dependencies _
+- **TimeSpan Pipe** _src\app\pipes\time-span\time-span.pipe.ts _ _Extract logic from Angular artifacts _
 
 ## Test Bed: imports and providers
 
-- [Api Service](src\app\services\api.service.ts) (HttpClientTestingModule)
-- [Utils Service](src\app\services\utils.service.ts) (inject a mock)
-- [Home Service](src\app\routes\home\home.service.ts) (integrated -> imports vs isolated -> providers)
+- **Api Service** _src\app\services\api.service.ts _ _HttpClientTestingModule _
+- **Utils Service** _src\app\services\utils.service.ts _ _inject a mock _
+- **Home Service** _src\app\routes\home\home.service.ts _ _integrated -> imports vs isolated -> providers _
 
 ---
 
