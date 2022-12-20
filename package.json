@@ -17,7 +17,10 @@
     "api": "json-server-auth ./database/db.json -r ./database/routes.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +41,7 @@
     "@angular-devkit/build-angular": "^14.2.7",
     "@angular/cli": "~14.2.7",
     "@angular/compiler-cli": "^14.2.0",
+    "@cypress/schematic": "^2.4.0",
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
@@ -53,6 +57,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "karma-spec-reporter": "^0.0.35",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "cypress": "latest"
   }
 }
