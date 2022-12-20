@@ -12,24 +12,32 @@
 
 ## Unit and Integration testing with only Jasmine alone
 
-- **Base Store** `src\app\services\base.store.ts` _Unit_
-- **Api Store** `src\app\services\api.store.ts` _Integration_
+- **Base Store** `src\app\services\base.store.spec.ts` _Unit_
+- **Api Store** `src\app\services\api.store.spec.ts` _Integration_
 - **Spec Reporter** `npm install karma-spec-reporter --save-dev` _Add spec reporter_
-- **tests** `src\test.ts` _Choose running context_
+- **tests** `src\test.spec.ts` _Choose running context_
 - **Karma Config** `karma.conf.js` _Configuration_
 
 ## Jasmine Spy and test doubles
 
-- **Options Service** `src\app\routes\options\options.service.ts` _Spy calls to Collaborator_
-- - **Base Store** `src\app\services\base.store.ts` _Spy private methods_
-- **Api Store** `src\app\services\api.store.ts` _Spy and stub dependencies_
-- **TimeSpan Pipe** `src\app\pipes\time-span\time-span.pipe.ts` _Extract logic from Angular artifacts_
+- **Options Service** `src\app\routes\options\options.service.spec.ts` _Spy calls to Collaborator_
+- **Base Store** `src\app\services\base.store.spec.ts` _Spy private methods_
+- **Api Store** `src\app\services\api.store.spec.ts` _Spy and stub dependencies_
+- **TimeSpan Pipe** `src\app\pipes\time-span\time-span.pipe.spec.ts` _Extract logic from Angular artifacts_
 
 ## Test Bed: imports and providers
 
-- **Api Service** `src\app\services\api.service.ts` _HttpClientTestingModule_
-- **Utils Service** `src\app\services\utils.service.ts` _inject a mock_
-- **Home Service** `src\app\routes\home\home.service.ts` _integrated -> imports vs isolated -> providers_
+- **Api Service** `src\app\services\api.service.spec.ts` _HttpClientTestingModule_
+- **Utils Service** `src\app\services\utils.service.spec.ts` _inject a mock_
+- **Home Service** `src\app\routes\home\home.service.spec.ts` _integrated -> imports vs isolated -> providers_
+
+## Component testing
+
+- **Agencies Component** `src\app\routes\agencies\agencies.component.spec.ts` _integrated controller - isolated template_
+- **Bookings Component** `src\app\routes\bookings\bookings.component.spec.ts` _isolated student task_
+- **Options List** `src\app\routes\options\options.list.spec.ts` _OnPush / Hosted_
+- **Home Component** `src\app\routes\home\home.component.spec.ts` _nested dependencies_
+- **Trips Form filling** `src\app\routes\trips\trips.form.spec.ts` _form interaction_
 
 ---
 
