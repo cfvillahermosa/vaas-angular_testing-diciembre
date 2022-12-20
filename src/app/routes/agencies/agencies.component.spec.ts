@@ -50,7 +50,7 @@ const inputAgencies: Agency[] = [
   },
 ];
 
-fdescribe('The Agencies Component view _isolated_', () => {
+describe('The Agencies Component view _isolated_', () => {
   let component: AgenciesComponent;
   let fixture: ComponentFixture<AgenciesComponent>;
   let apiService: ApiService;
@@ -85,7 +85,7 @@ fdescribe('The Agencies Component view _isolated_', () => {
   });
 });
 
-fdescribe('The Agencies Component view _isolated_', () => {
+describe('The Agencies Component view _isolated_', () => {
   let component: AgenciesComponent;
   let fixture: ComponentFixture<AgenciesComponent>;
   let apiServiceStub: any;

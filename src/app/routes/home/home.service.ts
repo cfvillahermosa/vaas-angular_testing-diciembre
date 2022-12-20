@@ -3,7 +3,7 @@ import { Trip } from '@models/trip.interface';
 import { ApiService } from '@services/api.service';
 import { ApiStore } from '@services/api.store';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class HomeService {
   private tripsStore = new ApiStore<Trip>();
 
