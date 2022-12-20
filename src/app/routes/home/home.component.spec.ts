@@ -27,7 +27,7 @@ const trip: Trip = {
   endDate: '2020-01-01',
 };
 
-fdescribe('The Home Component with integration', () => {
+describe('The Home Component with integration', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
@@ -49,7 +49,7 @@ fdescribe('The Home Component with integration', () => {
   });
 });
 
-fdescribe('The Home Component with nested dependencies', () => {
+describe('The Home Component with nested dependencies', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   // * this is the double stub for the nested dependency
@@ -81,7 +81,7 @@ class HomeServiceStub {
   }
 }
 
-fdescribe('The Home Component with testBed overriding providers', () => {
+describe('The Home Component with testBed overriding providers', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 

@@ -22,6 +22,7 @@ import { TripsService } from './trips.service';
       </form>
     </ng-container>
   `,
+  providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TripsForm {
