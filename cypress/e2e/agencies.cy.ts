@@ -1,15 +1,11 @@
+import { interceptGet } from 'cypress/support/interceptors';
+
 describe('The agencies page', () => {
   beforeEach(() => {
     cy.viewport(1000, 1200);
-    cy.intercept('GET', 'http://localhost:3000/agencies', {
-      fixture: 'agencies',
-    }).as('get_agencies');
-    cy.intercept('GET', 'http://localhost:3000/agency-ranges', {
-      fixture: 'agency-ranges',
-    }).as('get_agency-ranges');
-    cy.intercept('GET', 'http://localhost:3000/agency-statuses', {
-      fixture: 'agency-statuses',
-    }).as('get_agency-statuses');
+    interceptGet('agencies');
+    interceptGet('agency-ranges');
+    interceptGet('agency-statuses');
     cy.visit('/agencies');
     cy.wait('@get_agencies');
   });
@@ -17,14 +13,14 @@ describe('The agencies page', () => {
     cy.get('header').should('contain', '4 agencies');
   });
   it('should call delete when click on remove button', () => {
-    cy.intercept('DELETE', 'http://localhost:3000/agencies/*', {
+    cy.intercept('DELETE', Cypress.env('apiUrl') + 'agencies/*', {
       statusCode: 204,
     }).as('delete_agencies');
     cy.get(':nth-child(4) > :nth-child(4) > button').click();
     cy.get('@delete_agencies').its('response.statusCode').should('eq', 204);
   });
   it('should post when fill the form and click on submit button', () => {
-    cy.intercept('POST', 'http://localhost:3000/agencies', {
+    cy.intercept('POST', Cypress.env('apiUrl') + 'agencies', {
       statusCode: 201,
       body: {},
     }).as('post_agencies');
